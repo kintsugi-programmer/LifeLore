@@ -58,6 +58,8 @@ jsconfig.json
 
 page.jsx  className="w-full flex-center flex-col" this is tailwind https://tailwindcss.com/docs/text-decoration-color
 
+components made with rafce
+
 
 
 
