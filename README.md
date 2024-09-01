@@ -60,6 +60,14 @@ page.jsx  className="w-full flex-center flex-col" this is tailwind https://tailw
 
 components made with rafce
 
+Next lib for linking ;0
+"use client"; // Add this directive to indicate that this is a client component
+
+import Link from 'next/link';
+import Image from 'next/image';
+import { useState, useEffect } from 'react';
+import { signIn, signOut, useSession, getProviders } from 'next-auth/react';
+import React from 'react';
 
 
 

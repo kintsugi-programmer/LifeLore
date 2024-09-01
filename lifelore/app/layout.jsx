@@ -1,6 +1,10 @@
 // import React from 'react'
 //no path needed
-import '@styles/globals.css'
+// we call navbar to use it everywhere in the app
+
+import '@styles/globals.css';
+import Nav from '@components/Nav';
+import Feed from '@components/Feed';
 
 export const metadata = {
     title: 'LifeLore - Share and Discover Life Lessons',
@@ -31,7 +35,10 @@ const RootLayout = ({children}) => {
                 <div className='gradient' />
             </div>
 
-            <main className='app'>{children}</main>
+            <main className='app'>
+                <Nav />
+              {children}
+            </main>
         </body>
 
     </html>
