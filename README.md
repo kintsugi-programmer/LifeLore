@@ -55,6 +55,33 @@ Here's a detailed README for your Next.js application that incorporates all the 
 
 
 jsconfig.json
+
+page.jsx  className="w-full flex-center flex-col" this is tailwind https://tailwindcss.com/docs/text-decoration-color
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ---
 
 # LifeLore
