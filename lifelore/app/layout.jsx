@@ -5,6 +5,7 @@
 import '@styles/globals.css';
 import Nav from '@components/Nav';
 import Feed from '@components/Feed';
+import Provider from '@components/Provider';
 
 export const metadata = {
     title: 'LifeLore - Share and Discover Life Lessons',
@@ -31,6 +32,9 @@ const RootLayout = ({children}) => {
   return (
     <html lang='en'>
         <body>
+          <Provider>
+
+          
             <div className='main'>
                 <div className='gradient' />
             </div>
@@ -39,6 +43,7 @@ const RootLayout = ({children}) => {
                 <Nav />
               {children}
             </main>
+          </Provider>
         </body>
 
     </html>
