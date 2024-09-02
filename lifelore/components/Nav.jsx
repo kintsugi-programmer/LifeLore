@@ -5,9 +5,21 @@ import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { signIn, signOut, useSession, getProviders } from 'next-auth/react';
 import React from 'react';
+import Provider from './Provider';
 
 const Nav = () => {
-  const isUserLoggedIn = true;
+  // sign in using google and next auth 
+  const [providers,setProviders] = useState(null);
+  useEffect(() => {
+    const setProviders = async () => {
+      const response = await getProviders();
+      setProviders(response);
+    };
+    setProviders();
+  }, []);
+
+
+  const isUserLoggedIn = true; //test phase 
   return (
     <nav className='flex-between w-full mb-16 pt-3'>
       <Link href='/' className='flex gap-2 flex-center'>
@@ -31,9 +43,30 @@ const Nav = () => {
         </div>
 
         ):(
-          <></>
+          <>
+          {/* signin */}
+          {providers &&
+          Object.values(providers).map(
+            (provider)=>
+            (
+              <button
+                type='button'
+                key={provider.name}
+                className='black_btn'
+                onClick={()=>
+                  signIn(provider.id)
+                }>
+                  Sign In
+                
+              </button>
+            )
+          )}
+          </>
         )}
       </div>
+
+      {/* Mobile Nav */}
+      
       </nav>
   );
 }
