@@ -18,6 +18,10 @@ const Nav = () => {
     setProviders();
   }, []);
 
+  const[toggleDropDown,setToggleDropDown]=useState(false);
+
+
+
 
   const isUserLoggedIn = true; //test phase 
   return (
@@ -66,7 +70,66 @@ const Nav = () => {
       </div>
 
       {/* Mobile Nav */}
+      <div className="sm:hidden flex relative">
+        {isUserLoggedIn?(<div className='flex'>
+          {/* setToggleDropDown(!toggleDropDown) is wrong as its leads to unexpected results 
+          setToggleDropDown((prev)=>(!prev) is good*/}
+          <Image src="/assets/images/logo.svg" width={37} height={37} className='rounded-full' alt='profile' onClick={()=>setToggleDropDown((prev)=>(!prev))}></Image>
+          {toggleDropDown && (
+        <div className='dropdown'>
+          <Link 
+          href='/profile'
+          className='dropdown_link'
+          onClick={()=>(setToggleDropDown(false))}
+          >
+            My Profile
+          </Link>
+          <Link 
+          href='/create-exp'
+          className='dropdown_link'
+          onClick={()=>(setToggleDropDown(false))}
+          >
+            Create Advice
+          </Link>
+          <button
+                type='button'
+                onClick={()=>{
+                  setToggleDropDown(false);
+                  signOut();}
+                }
+                className='mt-5 w-full black_btn'>
+                  Sign Out
+                
+              </button>
+
+        </div>)}
+        </div>
+        
       
+      ):(
+          <>
+          {/* signin */}
+          {providers &&
+          Object.values(providers).map(
+            (provider)=>
+            (
+              <button
+                type='button'
+                key={provider.name}
+                className='black_btn'
+                onClick={()=>
+                  signIn(provider.id)
+                }>
+                  Sign In
+                
+              </button>
+            )
+          )}
+          
+        </>)}
+
+      </div>
+
       </nav>
   );
 }
