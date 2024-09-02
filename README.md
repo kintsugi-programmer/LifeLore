@@ -70,7 +70,26 @@ import { signIn, signOut, useSession, getProviders } from 'next-auth/react';
 import React from 'react';
 
 
+To roll back to the specific commit 4e527db and make it final on the main branch, follow these steps carefully:
 
+Step-by-Step Instructions
+Open your terminal and navigate to your repository's root directory.
+
+Reset your main branch to the specific commit using the --hard option. This will discard all changes made after the commit 4e527db:
+
+bash
+Copy code
+git reset --hard 4e527db
+Force push the changes to the remote main branch to ensure that the remote repository reflects this reset. This will overwrite the history on the main branch on the remote repository:
+
+bash
+Copy code
+git push origin main --force
+
+nav
+
+const isUserLoggedIn = true; is a good technique
+later make auth
 
 
 

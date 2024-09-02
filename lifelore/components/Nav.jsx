@@ -26,7 +26,10 @@ const Nav = () => {
       {isUserLoggedIn ? (
         <div className='flex gap-3 md:gap-5'>
           <Link className='black_btn' href="/create-exp" >Create Post</Link>
+          <button type="button" className='outline_btn' onClick={signOut}>Sign Out</button>
+          <Image src="/assets/images/logo.svg" width={37} height={37} className='rounded-full' alt='profile'></Image>
         </div>
+
         ):(
           <></>
         )}
