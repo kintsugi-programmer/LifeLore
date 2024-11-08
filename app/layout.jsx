@@ -25,7 +25,7 @@ const RootLayout = ({ children }) => (
           <Nav />
           {children}
           <span className="font-satoshi text-green-900 py-5"> Made with &#128154;
-          <a href="https://sbali.vercel." target="_blank" rel="noopener noreferrer" className="underline">kintsugi-programmer</a>
+          <a href="https://sbali.vercel.app" target="_blank" rel="noopener noreferrer" className="underline">kintsugi-programmer</a>
           </span>
         </main>
         
