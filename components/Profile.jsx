@@ -4,9 +4,10 @@ const Profile = ({ name, desc, data, handleEdit, handleDelete }) => {
   return (
     <section className='w-full'>
       <h1 className='head_text text-left'>
-        <span className='green_gradient font-satoshi'>{name} Profile</span>
+        <span className='text-green-900  font-satoshi'> 
+          {name} Profile</span>
       </h1>
-      <p className='green_gradient font-satoshi desc text-left'>{desc}</p>
+      <p className='text-green-900  font-satoshi desc text-left'>{desc}</p>
 
       <div className='mt-10 prompt_layout'>
         {data.map((post) => (

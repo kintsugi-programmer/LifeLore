@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-
+import Image from "next/image";
 import Form from "@components/Form";
 
 const UpdatePrompt = () => {
@@ -53,6 +53,9 @@ const UpdatePrompt = () => {
   };
 
   return (
+    <>
+    <div className="flex flex-col md:flex-row items-center">
+
     <Form
       type='Edit'
       post={post}
@@ -60,6 +63,15 @@ const UpdatePrompt = () => {
       submitting={submitting}
       handleSubmit={updatePrompt}
     />
+    <Image
+    src='/assets/images/5r.png'
+    alt='logo'
+    width={300}
+    height={300}
+    className='object-contain items-center'
+  />
+  </div>
+  </>
   );
 };
 

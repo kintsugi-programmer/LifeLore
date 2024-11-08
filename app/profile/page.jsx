@@ -3,7 +3,7 @@
 import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-
+import Image from "next/image";
 import Profile from "@components/Profile";
 
 const MyProfile = () => {
@@ -48,6 +48,7 @@ const MyProfile = () => {
   };
 
   return (
+    <>    <div className="">
     <Profile
       name='My'
       desc='Welcome to your personalized profile page. Share your exceptional Wisdom and inspire others with the power of your imagination'
@@ -55,6 +56,15 @@ const MyProfile = () => {
       handleEdit={handleEdit}
       handleDelete={handleDelete}
     />
+    <Image
+    src='/assets/images/6r.png'
+    alt='logo'
+    width={300}
+    height={300}
+    className='object-contain place-items-end'
+  />
+  </div>
+  </>
   );
 };
 

@@ -1,4 +1,5 @@
 "use client";
+import { CoolMode } from "./ui/smilebutton";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -56,25 +57,26 @@ const Nav = () => {
     <nav className='flex-between w-full mb-16 pt-3'>
       <Link href='/' className='flex gap-2 flex-center'>
         <Image
-          src='/assets/images/logo.svg'
+          src='/assets/images/logo.png'
           alt='logo'
           width={30}
           height={30}
           className='object-contain'
         />
-        <p className='logo_text'>LifeLore</p>
+        <p className='text-green-900 font-satoshi font-bold'>LifeLore</p>
       </Link>
 
       {/* Desktop Navigation */}
       <div className='sm:flex hidden'>
         {session?.user ? (
           <div className='flex gap-2 md:gap-2'>
+            <CoolMode>
             <button
         type='button'
         onClick={togglePlayPause}
         className='black_btn'>
         {isPlaying ? "Pause Chimes" : "Play Chimes"}
-      </button>
+      </button></CoolMode>
             <Link href='/create-prompt' className='black_btn'>
               Share Advice
             </Link>
@@ -96,13 +98,13 @@ const Nav = () => {
             </Link>
           </div>
         ) : (
-          <>
+          <> <CoolMode>
           <button
         type='button'
         onClick={togglePlayPause}
         className='black_btn'>
         {isPlaying ? "Pause Chimes" : "Play Chimes"}
-      </button>
+      </button></CoolMode>
       <div className="px-1"></div>
             {providers &&
               Object.values(providers).map((provider) => (
@@ -150,12 +152,13 @@ const Nav = () => {
                 >
                   Create Prompt
                 </Link>
+                <CoolMode>
                 <button
         type='button'
         onClick={togglePlayPause}
         className='dropdown_link'>
         {isPlaying ? "Pause Chimes" : "Play Chimes"}
-      </button>
+      </button></CoolMode>
                 <button
                   type='button'
                   onClick={() => {
@@ -172,13 +175,13 @@ const Nav = () => {
           </div>
         ) : (
           <>
-          
+          <CoolMode>
           <button
         type='button'
         onClick={togglePlayPause}
         className='black_btn'>
         {isPlaying ? "Pause Chimes" : "Play Chimes"}
-      </button>
+      </button></CoolMode>
       <div className="px-1"></div>
             {providers &&
               Object.values(providers).map((provider) => (
