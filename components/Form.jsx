@@ -23,7 +23,7 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
           <textarea
             value={post.prompt}
             onChange={(e) => setPost({ ...post, prompt: e.target.value })}
-            placeholder='Share Your Story'
+            placeholder='What Life Lesson would you like to pass on?'
             required
             className='form_textarea '
           />

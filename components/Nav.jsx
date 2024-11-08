@@ -78,7 +78,7 @@ const Nav = () => {
         {isPlaying ? "Pause Chimes" : "Play Chimes"}
       </button></CoolMode>
             <Link href='/create-prompt' className='black_btn'>
-              Share Advice
+              Create Post
             </Link>
 
             <button type='button' onClick={signOut} className='outline_btn'>
@@ -150,7 +150,7 @@ const Nav = () => {
                   className='dropdown_link'
                   onClick={() => setToggleDropdown(false)}
                 >
-                  Create Prompt
+                  Create Post
                 </Link>
                 <CoolMode>
                 <button
