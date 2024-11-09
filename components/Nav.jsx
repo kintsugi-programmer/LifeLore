@@ -21,7 +21,7 @@ const Nav = () => {
     // Initialize Howler sound object with autostart and loop
     soundRef.current = new Howl({
       src: ['/assets/bg.m4a'], // Replace with your audio file path
-      autoplay: true,   // Start automatically
+      autoplay: false,   // Start automatically
       loop: true,       // Loop audio
       volume: 1,      // Set volume (optional)
     });
