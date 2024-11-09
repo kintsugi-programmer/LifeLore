@@ -18,8 +18,8 @@ export const metadata = {
   ],
   icons: {
     icon: "/assets/images/2.png",
-    shortcut: "/assets/images/2.png",
-    apple: "/assets/images/2.png",
+    shortcut: "/assets/images/2.png", // Specify for quick access
+    apple: "/assets/images/2.png", // For Apple devices
   },
   openGraph: {
     title: "LifeLore - A Community of Shared Wisdom",
@@ -50,34 +50,30 @@ export const metadata = {
   },
 };
 
+
 const RootLayout = ({ children }) => (
-  <html lang="en">
-    <head>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    </head>
+  <html lang='en'>
+  <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
     <body>
       <Provider>
-        <div className="main-wrapper">
-          <div className="gradient-background" />
+        <div className='main'>
+          <div className='gradient' />
+
         </div>
 
-        <main className="app-content">
+        <main className='app'>
           <Nav />
           {children}
-          <span className="font-satoshi text-green-900 py-5">
-            Made with &#128154;
-            <a
-              href="https://sbali.vercel.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline"
-            >
-              kintsugi-programmer
-            </a>
+          <span className="font-satoshi text-green-900 py-5"> Made with &#128154;
+          <a href="https://sbali.vercel.app" target="_blank" rel="noopener noreferrer" className="underline">kintsugi-programmer</a>
           </span>
         </main>
+        
       </Provider>
     </body>
+
   </html>
 );
 
