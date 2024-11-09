@@ -5,6 +5,9 @@ const nextConfig = {
     appDir: true,
     serverComponentsExternalPackages: ["mongoose"],
   },
+  images: {
+    unoptimized: true,
+    },
   webpack(config) {
     config.experiments = {
       ...config.experiments,
