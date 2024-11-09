@@ -1,5 +1,4 @@
 import "@styles/globals.css";
-import { Vortex } from "@components/ui/vortex";
 import Nav from "@components/Nav";
 import Provider from "@components/Provider";
 
