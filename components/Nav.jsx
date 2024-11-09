@@ -1,6 +1,5 @@
 "use client";
 import { CoolMode } from "./ui/smilebutton";
-
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
@@ -9,21 +8,20 @@ import { Howl } from "howler";
 
 const Nav = () => {
   const { data: session } = useSession();
-
   const [providers, setProviders] = useState(null);
   const [toggleDropdown, setToggleDropdown] = useState(false);
 
   // Howler audio setup
-  const [isPlaying, setIsPlaying] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false); // Start with audio off
   const soundRef = useRef(null);
 
   useEffect(() => {
-    // Initialize Howler sound object with autostart and loop
+    // Initialize Howler sound object with autoplay off and loop on
     soundRef.current = new Howl({
       src: ['/assets/bg.m4a'], // Replace with your audio file path
-      autoplay: false,   // Start automatically
+      autoplay: false,  // Do not start automatically
       loop: true,       // Loop audio
-      volume: 1,      // Set volume (optional)
+      volume: 1,        // Set volume (optional)
     });
 
     return () => {
@@ -40,11 +38,6 @@ const Nav = () => {
     }
     setIsPlaying(!isPlaying);
   };
-
-  useEffect(() => {
-    // Auto start and loop the song by default
-    soundRef.current.play();
-  }, []);
 
   useEffect(() => {
     (async () => {
@@ -71,22 +64,19 @@ const Nav = () => {
         {session?.user ? (
           <div className='flex gap-2 md:gap-2'>
             <CoolMode>
-            <button
-        type='button'
-        onClick={togglePlayPause}
-        className='black_btn'>
-        {isPlaying ? "Pause Chimes" : "Play Chimes"}
-      </button></CoolMode>
+              <button
+                type='button'
+                onClick={togglePlayPause}
+                className='black_btn'>
+                {isPlaying ? "Pause Chimes" : "Play Chimes"}
+              </button>
+            </CoolMode>
             <Link href='/create-prompt' className='black_btn'>
               Create Post
             </Link>
-
             <button type='button' onClick={signOut} className='outline_btn'>
               Sign Out
             </button>
-            
-      
-
             <Link href='/profile'>
               <Image
                 src={session?.user.image}
@@ -98,14 +88,16 @@ const Nav = () => {
             </Link>
           </div>
         ) : (
-          <> <CoolMode>
-          <button
-        type='button'
-        onClick={togglePlayPause}
-        className='black_btn'>
-        {isPlaying ? "Pause Chimes" : "Play Chimes"}
-      </button></CoolMode>
-      <div className="px-1"></div>
+          <>
+            <CoolMode>
+              <button
+                type='button'
+                onClick={togglePlayPause}
+                className='black_btn'>
+                {isPlaying ? "Pause Chimes" : "Play Chimes"}
+              </button>
+            </CoolMode>
+            <div className="px-1"></div>
             {providers &&
               Object.values(providers).map((provider) => (
                 <button
@@ -135,7 +127,6 @@ const Nav = () => {
               alt='profile'
               onClick={() => setToggleDropdown(!toggleDropdown)}
             />
-
             {toggleDropdown && (
               <div className='dropdown'>
                 <Link
@@ -153,12 +144,13 @@ const Nav = () => {
                   Create Post
                 </Link>
                 <CoolMode>
-                <button
-        type='button'
-        onClick={togglePlayPause}
-        className='dropdown_link'>
-        {isPlaying ? "Pause Chimes" : "Play Chimes"}
-      </button></CoolMode>
+                  <button
+                    type='button'
+                    onClick={togglePlayPause}
+                    className='dropdown_link'>
+                    {isPlaying ? "Pause Chimes" : "Play Chimes"}
+                  </button>
+                </CoolMode>
                 <button
                   type='button'
                   onClick={() => {
@@ -169,23 +161,22 @@ const Nav = () => {
                 >
                   Sign Out
                 </button>
-
               </div>
             )}
           </div>
         ) : (
           <>
-          <CoolMode>
-          <button
-        type='button'
-        onClick={togglePlayPause}
-        className='black_btn'>
-        {isPlaying ? "Pause Chimes" : "Play Chimes"}
-      </button></CoolMode>
-      <div className="px-1"></div>
+            <CoolMode>
+              <button
+                type='button'
+                onClick={togglePlayPause}
+                className='black_btn'>
+                {isPlaying ? "Pause Chimes" : "Play Chimes"}
+              </button>
+            </CoolMode>
+            <div className="px-1"></div>
             {providers &&
               Object.values(providers).map((provider) => (
-                
                 <button
                   type='button'
                   key={provider.name}
@@ -200,8 +191,6 @@ const Nav = () => {
           </>
         )}
       </div>
-
-     
     </nav>
   );
 };
