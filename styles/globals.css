@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Satoshi+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -19,7 +19,7 @@
 }
 
 .main:before {
-  background: radial-gradient(circle, rgba(2, 0, 36, 0) 0, #fffded 100%);
+  background: radial-gradient(circle, rgba(2, 0, 36, 0) 0, #fafafa 100%);
   position: absolute;
   content: "";
   z-index: 2;
@@ -89,8 +89,8 @@
   @apply mt-5 text-5xl font-extrabold leading-[1.15] text-black sm:text-6xl;
 }
 
-.green_gradient {
-  @apply bg-gradient-to-r from-amber-500 via-green-600 to-yellow-500 bg-clip-text text-transparent;
+.orange_gradient {
+  @apply bg-gradient-to-r from-amber-500 via-orange-600 to-yellow-500 bg-clip-text text-transparent;
 }
 
 .green_gradient {
@@ -167,10 +167,4 @@
 
 .flex-between {
   @apply flex justify-between items-center;
-}
-
-@layer base {
-  :root {
-    --radius: 0.5rem;
-  }
 }

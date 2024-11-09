@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
-import Image from "next/image";
+
 import Form from "@components/Form";
 
 const CreatePrompt = () => {
@@ -37,8 +37,7 @@ const CreatePrompt = () => {
     }
   };
 
-  return (<>
-  <div className="flex flex-col md:flex-row items-center">
+  return (
     <Form
       type='Create'
       post={post}
@@ -46,16 +45,6 @@ const CreatePrompt = () => {
       submitting={submitting}
       handleSubmit={createPrompt}
     />
-    <Image
-    src='/assets/images/4r.png'
-    alt='logo'
-    width={300}
-    height={300}
-    className='object-contain items-center'
-  />
-  </div>
-  </>
-
   );
 };
 

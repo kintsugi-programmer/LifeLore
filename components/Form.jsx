@@ -3,12 +3,12 @@ import Link from "next/link";
 const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
   return (
     <section className='w-full max-w-full flex-start flex-col'>
-<h1 className='head_text text-left'>
-        <span className='text-green-900  font-satoshi'>{type} Advice</span>
+      <h1 className='head_text text-left'>
+        <span className='blue_gradient'>{type} Post</span>
       </h1>
-      <p className='font-satoshi desc text-left max-w-md'>
-        
-        We believe that every experience holds valuable lessons. Lifelore is a place for you to share your wisdom and insights, helping others on their journeys while enriching your own.
+      <p className='desc text-left max-w-md'>
+        {type} and share amazing prompts with the world, and let your
+        imagination run wild with any AI-powered platform
       </p>
 
       <form
@@ -17,13 +17,13 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
       >
         <label>
           <span className='font-satoshi font-semibold text-base text-gray-700'>
-          Post Your Advice
+            Your AI Prompt
           </span>
 
           <textarea
             value={post.prompt}
             onChange={(e) => setPost({ ...post, prompt: e.target.value })}
-            placeholder='What Life Lesson would you like to pass on?'
+            placeholder='Write your post here'
             required
             className='form_textarea '
           />
@@ -31,9 +31,9 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
 
         <label>
           <span className='font-satoshi font-semibold text-base text-gray-700'>
-            Field of Advice{" "}
+            Field of Prompt{" "}
             <span className='font-normal'>
-              (#growth, #relationship, #carrer, etc.)
+              (#product, #webdevelopment, #idea, etc.)
             </span>
           </span>
           <input
@@ -54,7 +54,7 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
           <button
             type='submit'
             disabled={submitting}
-            className='px-5 py-1.5 text-sm bg-primary bg-green-900  rounded-full text-white'
+            className='px-5 py-1.5 text-sm bg-primary-orange rounded-full text-white'
           >
             {submitting ? `${type}ing...` : type}
           </button>

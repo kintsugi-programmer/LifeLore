@@ -68,11 +68,11 @@ const Feed = () => {
   };
 
   return (
-    <section className='feed '>
+    <section className='feed'>
       <form className='relative w-full flex-center'>
         <input
           type='text'
-          placeholder='What wisdom are you looking for today?'
+          placeholder='Search for a tag or a username'
           value={searchText}
           onChange={handleSearchChange}
           required
