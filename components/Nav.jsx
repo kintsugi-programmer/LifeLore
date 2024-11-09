@@ -81,9 +81,9 @@ const Nav = () => {
             <Image
           src='/assets/images/logo.png'
           alt='logo'
-          width={30}
-          height={30}
-          className='object-contain'
+          width={40}
+          height={40}
+          className='rounded-full object-contain'
         />
               {/* <Image
                 src={session?.user.image}
@@ -129,9 +129,9 @@ const Nav = () => {
             <Image
           src='/assets/images/logo.png'
           alt='logo'
-          width={30}
-          height={30}
-          className='object-contain'
+          width={40}
+          height={40}
+          className='rounded-full object-contain'
         />
             {/* <Image
               src={session?.user.image}
