@@ -78,13 +78,20 @@ const Nav = () => {
               Sign Out
             </button>
             <Link href='/profile'>
-              <Image
+            <Image
+          src='/assets/images/logo.png'
+          alt='logo'
+          width={30}
+          height={30}
+          className='object-contain'
+        />
+              {/* <Image
                 src={session?.user.image}
                 width={37}
                 height={37}
                 className='rounded-full'
                 alt='profile'
-              />
+              /> */}
             </Link>
           </div>
         ) : (
@@ -120,13 +127,20 @@ const Nav = () => {
         {session?.user ? (
           <div className='flex'>
             <Image
+          src='/assets/images/logo.png'
+          alt='logo'
+          width={30}
+          height={30}
+          className='object-contain'
+        />
+            {/* <Image
               src={session?.user.image}
               width={37}
               height={37}
               className='rounded-full'
               alt='profile'
               onClick={() => setToggleDropdown(!toggleDropdown)}
-            />
+            /> */}
             {toggleDropdown && (
               <div className='dropdown'>
                 <Link
