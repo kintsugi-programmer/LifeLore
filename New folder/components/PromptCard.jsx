@@ -33,13 +33,20 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
           className='flex-1 flex justify-start items-center gap-3 cursor-pointer'
           onClick={handleProfileClick}
         >
-          <Image
+          {/* <Image
             src={post.creator.image}
             alt='user_image'
             width={40}
             height={40}
             className='rounded-full object-contain'
-          />
+          /> */}
+          <Image
+          src='/assets/images/logo.png'
+          alt='logo'
+          width={40}
+          height={40}
+          className='rounded-full object-contain'
+        />
 
           <div className='flex flex-col'>
             <h3 className='font-satoshi font-semibold text-gray-900'>
