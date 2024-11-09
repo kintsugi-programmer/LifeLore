@@ -16,37 +16,13 @@ export const metadata = {
     "Social Network",
     "AI Prompts",
   ],
-  icons: {
-    icon: "/assets/images/2.png",
-    shortcut: "/assets/images/2.png", // Specify for quick access
-    apple: "/assets/images/2.png", // For Apple devices
-  },
   openGraph: {
     title: "LifeLore - A Community of Shared Wisdom",
     description: "Explore life lessons and personal experiences shared by a global community. Join LifeLore and contribute your wisdom.",
     url: "https://lifelore.vercel.app",
     siteName: "LifeLore",
-    images: [
-      {
-        url: "/assets/images/2.png",
-        width: 1200,
-        height: 630,
-        alt: "LifeLore - Where Wisdom Meets Community",
-      },
-    ],
     locale: "en_US",
     type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "LifeLore - Share and Discover Life Lessons",
-    description: "Join a community-driven platform where wisdom is shared and cherished.",
-    images: [
-      {
-        url: "/assets/images/2.png",
-        alt: "LifeLore - A Community of Shared Wisdom",
-      },
-    ],
   },
 };
 
