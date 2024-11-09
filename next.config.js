@@ -7,13 +7,10 @@ const nextConfig = {
   images: {
     domains: ['lh3.googleusercontent.com'],
   },
+  // Remove the custom webpack configuration to disable it
   webpack(config) {
-    config.experiments = {
-      ...config.experiments,
-      topLevelAwait: true,
-    }
-    return config
-  }
+    return config; // Return the default config without modifications
+  },
 }
 
-module.exports = nextConfig
+module.exports = nextConfig;
