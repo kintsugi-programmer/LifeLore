@@ -1,20 +1,32 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Image from "next/image";
 import Form from "@components/Form";
-
-const UpdatePrompt = () => {
-  const router = useRouter();
+import Loading from "@app/profile/loading";
+// Separate component to get and provide the prompt ID
+function PromptIdFetcher({ setPromptId }) {
   const searchParams = useSearchParams();
   const promptId = searchParams.get("id");
 
-  const [post, setPost] = useState({ prompt: "", tag: "", });
+  useEffect(() => {
+    setPromptId(promptId);
+  }, [promptId, setPromptId]);
+
+  return null; // This component does not render anything
+}
+
+const UpdatePrompt = () => {
+  const router = useRouter();
+  const [promptId, setPromptId] = useState(null);
+  const [post, setPost] = useState({ prompt: "", tag: "" });
   const [submitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
     const getPromptDetails = async () => {
+      if (!promptId) return;
+
       const response = await fetch(`/api/prompt/${promptId}`);
       const data = await response.json();
 
@@ -24,7 +36,7 @@ const UpdatePrompt = () => {
       });
     };
 
-    if (promptId) getPromptDetails();
+    getPromptDetails();
   }, [promptId]);
 
   const updatePrompt = async (e) => {
@@ -54,24 +66,27 @@ const UpdatePrompt = () => {
 
   return (
     <>
-    <div className="flex flex-col md:flex-row items-center">
+      <Suspense fallback={<Loading />}>
+        <PromptIdFetcher setPromptId={setPromptId} />
+      </Suspense>
 
-    <Form
-      type='Edit'
-      post={post}
-      setPost={setPost}
-      submitting={submitting}
-      handleSubmit={updatePrompt}
-    />
-    <Image
-    src='/assets/images/5r.png'
-    alt='logo'
-    width={300}
-    height={300}
-    className='object-contain items-center'
-  />
-  </div>
-  </>
+      <div className="flex flex-col md:flex-row items-center">
+        <Form
+          type="Edit"
+          post={post}
+          setPost={setPost}
+          submitting={submitting}
+          handleSubmit={updatePrompt}
+        />
+        <Image
+          src="/assets/images/5r.png"
+          alt="logo"
+          width={300}
+          height={300}
+          className="object-contain items-center"
+        />
+      </div>
+    </>
   );
 };
 
