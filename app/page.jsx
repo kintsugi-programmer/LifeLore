@@ -79,8 +79,9 @@ of a <span className="font-bold">community</span><br /> <span className="font-bo
       connect<span className="font-bold"> us</span>  all. </div></div>
       </div>
       </div>
-      <iframe width="500" height="281" src="https://www.youtube.com/embed/11zYdMHxLr8?si=pusnj3J9SQLX8cTu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-  </section>
+{/*        <iframe width="500" height="281" src="https://www.youtube.com/embed/11zYdMHxLr8?si=pusnj3J9SQLX8cTu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+   */}
+  </section> 
 );
 
 export default Home;
