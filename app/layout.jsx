@@ -25,7 +25,7 @@ export const generateViewport = () => {
     applicationName: "LifeLore",
     generator: "Next.js",
     referrer: "origin-when-cross-origin",
-    themeColor: "#FF4500", // Vibrant orange for branding
+    themeColor: "#385212", // branding
     colorScheme: "light",
     viewport: "width=device-width, initial-scale=1",
     openGraph: {
@@ -33,14 +33,6 @@ export const generateViewport = () => {
       description: "LifeLore is a unique platform where you can share your hard-earned life lessons and learn from others' experiences. Discover wisdom, connect with a like-minded community, and grow together. LifeLore – Where Wisdom Meets Community.",
       url: "https://lifelore.vercel.app/",
       siteName: "LifeLore",
-      images: [
-        {
-          url: "/assets/images/2.png", // Replace with actual image URL
-          width: 1200,
-          height: 630,
-          alt: "LifeLore Logo",
-        },
-      ],
       locale: "en_US",
       type: "website",
     },
